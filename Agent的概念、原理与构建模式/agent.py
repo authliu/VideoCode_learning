@@ -27,7 +27,7 @@ class ReActAgent:
         messages = [
             {"role": "system", "content": self.render_system_prompt(react_system_prompt_template)},
             {"role": "user", "content": f"<question>{user_input}</question>"}
-        ]
+        ]    # 构造prompt模版——调用的是open ai的Chat API，它的设计就是基于“多轮对话”的结构，模型需要接收一个消息列表，每条消息都有角色和内容，才能理解上下文，保持对话
 
         while True:
 
